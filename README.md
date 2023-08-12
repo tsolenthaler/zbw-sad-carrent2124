@@ -10,9 +10,9 @@ C4Context
     Person(Sachbearbeiter, "Sachbearbeiter")
     Person(Kunde, "Kunde")
 
-
-    System(CarRent, "CarRent", "Software System")
-
+    Boundary(b1, "CarRent System", "boundary") {
+        System(CarRent, "CarRent", "Software System")
+    }
 
     SystemDb(Database, "Database", "Container MSSQL")
     Container(github, "GitHub", "Component Git", "GitHub")
@@ -22,7 +22,7 @@ C4Context
     Rel(CarRent, Database)
     Rel(CarRent, github)
 
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1", $c4SystemInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 ```
 
 ### Test
