@@ -8,19 +8,17 @@ C4Context
     Person(Sachbearbeiter, "Sachbearbeiter")
      Person(Kunde, "Kunde")
 
-    Boundary(b1, "System", "System") {
+    Boundary(b1, "", "") {
         System(CarRent, "CarRent", "Software System")
     }
 
     Boundary(b2, "", "") {
-        SystemDb(Database, "Database", "Container MSSQL")
-        Container(github, "GitHub", "Component Git", "GitHub")
+        System_Ext(MailSystem, "E-Mail System", "Mail Service")
     }
 
-    Rel(Sachbearbeiter, CarRent, "Change Reservation")
-    Rel(Kunde, CarRent, "Add Reservation")
-    Rel(CarRent, Database, "")
-    Rel(CarRent, github, "")
+    Rel(Sachbearbeiter, CarRent, "Manage all")
+    Rel(Kunde, CarRent, "Read and Search")
+    Rel(CarRent, MailSystem, "send E-Mail")
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
@@ -28,7 +26,7 @@ C4Context
 ### 1.2. - Containers
 ```mermaid
 C4Container
-    title Container diagram for CarRent
+
 
 ```
 
