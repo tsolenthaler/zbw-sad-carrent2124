@@ -19,10 +19,10 @@ C4Context
 
     Rel(Sachbearbeiter, CarRent, "Change Reservation")
     Rel(Kunde, CarRent, "Add Reservation")
-    Rel(CarRent, Database, "to DB")
-    Rel(CarRent, github, "to Git")
+    Rel(CarRent, Database)
+    Rel(CarRent, github)
 
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1", $c4SystemInRow="1")
 ```
 
 ### Test
