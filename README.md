@@ -21,6 +21,8 @@ C4Context
     Rel(Kunde, CarRent, "Add Reservation")
     Rel(CarRent, Database, "to DB")
     Rel(CarRent, github, "to Git")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
 ### Test
