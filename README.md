@@ -10,9 +10,7 @@ C4Context
     Person(Sachbearbeiter, "Sachbearbeiter")
     Person(Kunde, "Kunde")
 
-    Boundary(b1, "Boundary1", "boundary") {
-        System(CarRent, "CarRent", "Software System")
-    }
+    System(CarRent, "CarRent", "Software System")
 
     SystemDb(Database, "Database", "Container MSSQL")
     Container(github, "GitHub", "Component Git", "GitHub")
