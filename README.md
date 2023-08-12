@@ -12,10 +12,8 @@ C4Context
         System(CarRent, "CarRent", "Software System")
     }
 
-    Boundary(b2, "Boundary2", "") {
-        SystemDb(Database, "Database", "Container MSSQL")
-        Container(github, "GitHub", "Component Git", "GitHub")
-    }
+    SystemDb(Database, "Database", "Container MSSQL")
+    Container(github, "GitHub", "Component Git", "GitHub")
 
     Rel(Sachbearbeiter, CarRent, "Change Reservation")
     Rel(Kunde, CarRent, "Add Reservation")
