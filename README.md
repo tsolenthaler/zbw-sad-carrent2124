@@ -8,14 +8,16 @@ C4Context
     title System Context diagram for CarRent
 
     Person(Sachbearbeiter, "Sachbearbeiter")
-    Person(Kunde, "Kunde")
+     Person(Kunde, "Kunde")
 
-    Boundary(b1, "Boundary1", "boundary") {
+    System_Boundary(b1, "System", "") {
         System(CarRent, "CarRent", "Software System")
     }
 
-    SystemDb(Database, "Database", "Container MSSQL")
-    Container(github, "GitHub", "Component Git", "GitHub")
+    Boundary(b2, "Boundary2", "") {
+        SystemDb(Database, "Database", "Container MSSQL")
+        Container(github, "GitHub", "Component Git", "GitHub")
+    }
 
     Rel(Sachbearbeiter, CarRent, "Change Reservation")
     Rel(Kunde, CarRent, "Add Reservation")
