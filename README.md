@@ -17,8 +17,11 @@ C4Context
     SystemDb(Database, "Database", "Container MSSQL")
     Container(github, "GitHub", "Component Git", "GitHub")
 
-    BiRel(Sachbearbeiter, CarRent, "Change Reservation")
-    BiRel(Kunde, CarRent, "Add Reservation")
+    Rel(Sachbearbeiter, CarRent, "Change Reservation")
+    Rel(Kunde, CarRent, "Add Reservation")
+
+    Rel(CarRent, Database)
+    Rel(CarRent, github)
 ```
 
 ### Test
@@ -27,7 +30,7 @@ C4Context
 ```mermaid
 C4Container
     title Container diagram for CarRent
-    
+
 ```
 
 ### 1.3. - Compontents
