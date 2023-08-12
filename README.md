@@ -10,7 +10,7 @@ C4Context
     Person(Sachbearbeiter, "Sachbearbeiter")
     Person(Kunde, "Kunde")
 
-    Boundary(b1, "CarRent System", "boundary") {
+    Boundary(b1, "Boundary1", "boundary") {
         System(CarRent, "CarRent", "Software System")
     }
 
