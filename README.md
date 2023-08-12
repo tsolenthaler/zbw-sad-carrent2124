@@ -45,7 +45,7 @@ C4Container
     Rel(api, database, "CRU(D)")
     Rel(api, MailSystem, "send E-Mail")
 
-    UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 ```
 
 ### 1.3. - Compontents
