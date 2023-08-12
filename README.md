@@ -44,11 +44,9 @@ C4Context
     Rel_Neighbor(web_app, spa, "Delivers")
     Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
     Rel(mobile_app, backend_api, "Uses", "async, JSON/HTTPS")
-    Rel_Back_Neighbor(database, backend_api, "Reads from and writes to", "sync, JDBC")
 
     Rel_Back(customer, email_system, "Sends e-mails to")
     Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
-    Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
 ```
 
 ### 1.2. - Containers
