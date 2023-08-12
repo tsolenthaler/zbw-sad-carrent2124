@@ -22,9 +22,6 @@ C4Context
 
 ```mermaid
 C4Context
-    SHOW_PERSON_OUTLINE()
-    ' Tags support no spaces in the name (based on the underlining stereotypes, which don't support spaces anymore). 
-    ' If spaces are requested in the legend, legend text with space has to be defined
     AddElementTag("backendContainer", $fontColor=$ELEMENT_FONT_COLOR, $bgColor="#335DA5", $shape=EightSidedShape(), $legendText="backend container (eight sided)")
     AddRelTag("async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DashedLine())
     AddRelTag("sync/async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DottedLine())
@@ -37,7 +34,7 @@ C4Context
         Container(web_app, "Web Application", "Java, Spring MVC", "Delivers the static content and the Internet banking SPA")
         Container(spa, "Single-Page App", "JavaScript, Angular", "Provides all the Internet banking functionality to customers via their web browser")
         Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device")
-        ContainerDb(database, "Database", "SQL Database", "Stores user registration information, hashed auth credentials, access logs, etc.")
+        ContainerDb(database, "Database", "SQL Database", "Stores user registration information, hashed auth credentials, access logs, etc ")
         Container(backend_api, "API Application", "Java, Docker Container", "Provides Internet banking functionality via API", $tags="backendContainer")
     }
 
@@ -56,8 +53,6 @@ C4Context
     Rel_Back(customer, email_system, "Sends e-mails to")
     Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
     Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS", $tags="sync/async")
-
-    SHOW_LEGEND()
 ```
 
 ### 1.2. - Containers
