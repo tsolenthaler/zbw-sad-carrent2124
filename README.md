@@ -19,9 +19,8 @@ C4Context
 
     Rel(Sachbearbeiter, CarRent, "Change Reservation")
     Rel(Kunde, CarRent, "Add Reservation")
-
-    Rel(CarRent, Database)
-    Rel(CarRent, github)
+    Rel(CarRent, Database, "to DB")
+    Rel(CarRent, github, "to Git")
 ```
 
 ### Test
