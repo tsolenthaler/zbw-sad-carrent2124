@@ -24,7 +24,7 @@ C4Context
     Rel(CarRent, Database, "")
     Rel(CarRent, github, "")
 
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
 ```
 
 ### Test
