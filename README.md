@@ -35,7 +35,9 @@ C4Container
         ContainerDb(database, "Database", "SQL Database", "Stores user, cars, Car classes, Reservations and Rental contracts")
     }
 
-    System_Ext(MailSystem, "E-Mail System", "Mail Service")
+    Boundary(b2, "", "") {
+        System_Ext(MailSystem, "E-Mail System", "Mail Service")
+    }
 
     Rel(Sachbearbeiter, webapp, "HTTPS")
     Rel(Kunde, webapp, "HTTPS")
@@ -43,6 +45,7 @@ C4Container
     Rel(api, database, "CRU(D)")
     Rel(api, MailSystem, "send E-Mail")
 
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 
 ### 1.3. - Compontents
