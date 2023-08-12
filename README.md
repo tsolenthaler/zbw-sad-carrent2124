@@ -20,8 +20,9 @@ C4Context
 
 ### Test
 
+### 1.2. - Containers
 ```mermaid
-C4Context
+C4Container
     title Container diagram for Internet Banking System
 
     Person(customer, Customer, "A customer of the bank, with personal bank accounts")
@@ -48,8 +49,6 @@ C4Context
     Rel_Back(customer, email_system, "Sends e-mails to")
     Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
 ```
-
-### 1.2. - Containers
 
 ### 1.3. - Compontents
 
