@@ -5,12 +5,10 @@
 ### 1.1. - Context
 ```mermaid
 C4Context
-    title System Context diagram for CarRent
-
     Person(Sachbearbeiter, "Sachbearbeiter")
      Person(Kunde, "Kunde")
 
-    System_Boundary(b1, "System", "") {
+    Boundary(b1, "System", "System") {
         System(CarRent, "CarRent", "Software System")
     }
 
@@ -24,10 +22,8 @@ C4Context
     Rel(CarRent, Database, "")
     Rel(CarRent, github, "")
 
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="2")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 ```
-
-### Test
 
 ### 1.2. - Containers
 ```mermaid
