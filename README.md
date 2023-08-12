@@ -22,10 +22,6 @@ C4Context
 
 ```mermaid
 C4Context
-    AddElementTag("backendContainer", $fontColor=$ELEMENT_FONT_COLOR, $bgColor="#335DA5", $shape=EightSidedShape(), $legendText="backend container (eight sided)")
-    AddRelTag("async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DashedLine())
-    AddRelTag("sync/async", $textColor=$ARROW_FONT_COLOR, $lineColor=$ARROW_COLOR, $lineStyle=DottedLine())
-
     title Container diagram for Internet Banking System
 
     Person(customer, Customer, "A customer of the bank, with personal bank accounts")
@@ -39,7 +35,7 @@ C4Context
     }
 
     System_Ext(email_system, "E-Mail System", "The internal Microsoft Exchange system")
-    System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+    System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts transactions, etc.")
 
     Rel(customer, web_app, "Uses", "HTTPS")
     Rel(customer, spa, "Uses", "HTTPS")
