@@ -6,7 +6,7 @@
 ```mermaid
 C4Context
     Person(Sachbearbeiter, "Sachbearbeiter")
-     Person(Kunde, "Kunde")
+    Person(Kunde, "Kunde")
 
     Boundary(b1, "", "") {
         System(CarRent, "CarRent", "Software System")
@@ -26,7 +26,22 @@ C4Context
 ### 1.2. - Containers
 ```mermaid
 C4Container
+    Person(Sachbearbeiter, "Sachbearbeiter")
+    Person(Kunde, "Kunde")
 
+    Container_Boundary(CarRent, "CarRent", "") {
+        Container(webapp, "Web Application", "", "")
+        Container(api, "API", "", "Provides CarRent functionality via API")
+        ContainerDb(database, "Database", "SQL Database", "Stores user, cars, Car classes, Reservations and Rental contracts")
+    }
+
+    System_Ext(MailSystem, "E-Mail System", "Mail Service")
+
+    Rel(Sachbearbeiter, webapp, "HTTPS")
+    Rel(Kunde, webapp, "HTTPS")
+    Rel(webapp, api, "Requests")
+    Rel(api, database, "CRU(D)")
+    Rel(api, MailSystem, "send E-Mail")
 
 ```
 
