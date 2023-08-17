@@ -32,7 +32,7 @@ C4Container
     Container_Boundary(CarRent, "CarRent", "") {
         Container(webapp, "Web Application", "", "")
         Container(api, "API", "", "Provides CarRent functionality via API")
-        ContainerDb(database, "Database", "SQL Database", "Stores user, cars, Car classes, Reservations and Rental contracts")
+        ContainerDb(database, "Database", "Postgres", "Stores user, cars, Car classes, Reservations and Rental contracts")
     }
 
     Boundary(b2, "", "") {
