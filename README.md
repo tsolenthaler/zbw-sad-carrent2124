@@ -86,36 +86,36 @@ C4Component
 ```mermaid
 classDiagram
 class Customer{
-    int ChstomerNr
-    string Name
-    Address Address
+    ChstomerNr
+    Name
+    Address
 }
 
 class Reservation{
-    int ReservationNr
-    date StartDate
-    date endDate
-    float TotalCost
+    ReservationNr
+    StartDate
+    endDate
+    TotalCost
 }
 
 class RentalContract{
-    int ContractNr
+    ContractNr
 }
 
 class Car{
-    int CarNr
+    CarNr
 }
 
 class Model{
-    string Name
+    Name
 }
 
 class Brand{
-    string Name
+    Name
 }
 
 class Category {
-    float DailyFee
+    DailyFee
 }
 
 class Luxury
