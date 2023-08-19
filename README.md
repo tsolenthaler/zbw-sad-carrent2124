@@ -29,7 +29,7 @@ C4Container
     Person(Sachbearbeiter, "Sachbearbeiter")
     Person(Kunde, "Kunde")
 
-    Container_Boundary(CarRent, "CarRent", "") {
+    Boundary(CarRent, "CarRent", "") {
         Container(webapp, "Web Application", "", "")
         Container(api, "API", "", "Provides CarRent functionality via API")
         ContainerDb(database, "Database", "Postgres", "Stores user, cars, Car classes, Reservations and Rental contracts")
