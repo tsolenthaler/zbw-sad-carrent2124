@@ -49,6 +49,29 @@ C4Container
 ```
 
 ### 1.3. - Compontents
+```mermaid
+C4Component
+    Container(webapp, "Web Application", "", "")
+
+    Container_Boundary(api, "API Application") {
+        Component(car, "Car Controller", "Component API", "Car Controller")
+        Component(customer, "Customer Controller", "Component API", "Customer Controller")
+        Component(reservation, "Reservation Controller", "Component API", "Reservation Controller")
+        Component(contract, "Contract Controller", "Component API", "Contract Controller")
+    }
+
+    Boundary(b2, "", "") {
+        ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+    }
+
+    Rel(webapp, car, "Car", "JSON/HTTPS")
+    Rel(webapp, customer, "Customer", "JSON/HTTPS")
+    Rel(webapp, reservation, "Reservation", "JSON/HTTPS")
+    Rel(webapp, contract, "Contract", "JSON/HTTPS")
+
+```
+
+
 
 ### 1.4. - Classes
 
