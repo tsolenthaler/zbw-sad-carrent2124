@@ -123,12 +123,15 @@ class Midrange
 class Economy
 
 Customer "1" --> "0..n" Reservation : has
-Reserveration "1" --> "0..1" RentalContract : converted
-Reserveration "1" --> "1" Category : choose
+Reservation "1" --> "0..1" RentalContract : converted
+Reservation "1" --> "1" Category : choose
 RentalContract "*" --> "1" Car : associated
 Car "*" --> "1" Category : assigned
 Car "1" --> "1" Brand : has
 Car "1" --> "1" Model : has
+Luxury --|> Category
+Midrange --|> Category
+Economy --|> Category
 
 
 ```
