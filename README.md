@@ -81,7 +81,7 @@ C4Component
 
 ## 2.  Arbeitspaket 2 – Domain Model und Use Cases
 
-### 2.1 Domain Model / Klassen Diagramm
+### 2.1 Domain Model
 
 ```mermaid
 classDiagram
