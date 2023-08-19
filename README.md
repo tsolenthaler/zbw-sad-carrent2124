@@ -1,6 +1,6 @@
 # CarRent
 
-## 1.  Arbeitspaket 1 - C4 Model
+## 1.  Arbeitspaket - C4 Model
 
 ### 1.1. - Context
 ```mermaid
@@ -79,7 +79,7 @@ C4Component
     UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
 
-## 2.  Arbeitspaket 2 – Domain Model und Use Cases
+## 2.  Arbeitspaket – Domain Model und Use Cases
 
 ### 2.1 Domain Model
 
@@ -122,7 +122,7 @@ class Luxury
 class Midrange
 class Economy
 
-Customer "1" --> "0..n" Reservation : has
+Customer "1" --> "0..*" Reservation : has
 Reservation "1" --> "0..1" RentalContract : converted
 Reservation "1" --> "1" Category : choose
 RentalContract "*" --> "1" Car : associated
@@ -147,18 +147,18 @@ Economy --|> Category
 | UC-006 | Kunde          | Kunde kann eine Reservation tätigen mit einem Auto aus einer bestimmten Klasse und die Anzahl Tage angeben. |
 | UC-007 | Kunde          | Kunde holt sein reserviertes Auto ab. Die Reservation wird zu einen Mietvertrag umgewandelt.                |
 
-## 3.Arbeitspaket 3 – 4+1 Views
+## 3.Arbeitspaket – 4+1 Views
 
 ### 3.1 Deployment View
 
 ### 3.2 Logical View
 
-## 4. Arbeitspaket 4 – Implementierung
+## 4. Arbeitspaket – Implementierung
 
-## 5. Arbeitspaket 5 – Continuous Integration und Metriken
+## 5. Arbeitspaket – Continuous Integration und Metriken
 
 ### 5.1 Continuous Integration
 
 ### 5.2. Metriken
 
-## 6. Arbeitspaket 6 – Dokumentation (nach arc42)
+## 6. Arbeitspaket – Dokumentation (nach arc42)
