@@ -1,6 +1,6 @@
 # CarRent
 
-## 1. C4 Model
+## 1.  Arbeitspaket 1 - C4 Model
 
 ### 1.1. - Context
 ```mermaid
@@ -42,7 +42,7 @@ C4Container
     Rel(Sachbearbeiter, webapp, "HTTPS")
     Rel(Kunde, webapp, "HTTPS")
     Rel(webapp, api, "Requests")
-    Rel(api, database, "CRU(D)")
+    Rel(api, database, "CRUD")
     Rel(api, MailSystem, "send E-Mail")
 
     UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
@@ -58,6 +58,8 @@ C4Component
         Component(customer, "Customer Controller", "Component API", "Customer Controller")
         Component(reservation, "Reservation Controller", "Component API", "Reservation Controller")
         Component(contract, "Contract Controller", "Component API", "Contract Controller")
+
+        Component(car, "Car Repository", "Component API", "Car Controller")
     }
 
     Boundary(b2, "", "") {
@@ -77,22 +79,83 @@ C4Component
     UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
 
+## 2.  Arbeitspaket 2 – Domain Model und Use Cases
+
+### 2.1 Domain Model / Klassen Diagramm
+
+```mermaid
+classDiagram
+class Customer{
+    int ChstomerNr
+    string Name
+    Address Address
+}
+
+class Reservation{
+    int ReservationNr
+    date StartDate
+    date endDate
+    float TotalCost
+}
+
+class RentalContract{
+    int ContractNr
+}
+
+class Car{
+    int CarNr
+}
+
+class Model{
+    string Name
+}
+
+class Brand{
+    string Name
+}
+
+class Category {
+    float DailyFee
+}
+
+class Luxury
+class Midrange
+class Economy
+
+Customer "1" --> "0..n" Reservation : has
+Reserveration "1" --> "0..1" RentalContract : converted
+Reserveration "1" --> "1" Category : choose
+RentalContract "*" --> "1" Car : associated
+Car "*" --> "1" Category : assigned
+Car "1" --> "1" Brand : has
+Car "1" --> "1" Model : has
 
 
-### 1.4. - Classes
+```
 
-## 2. Use Cases
+### 2.2 Use Cases
+| Nr     | User           | Ziel                                                                                                        |
+| ------ | -------------- | ----------------------------------------------------------------------------------------------------------- |
+| UC-001 | Sachbearbeiter | Nach Kunden mit Namen und Adresse und Kundennummer im System verwalten (erfassen, bearbeiten, löschen).     |
+| UC-002 | Sachbearbeiter | Nach Kunden mit dessen Namen oder Kundennummer suchen.                                                      |
+| UC-003 | Sachbearbeiter | Kann Autos verwalten und suchen.                                                                            |
+| UC-004 | Sachbearbeiter | Auto einer bestimmten Klasse zuordnen.                                                                      |
+| UC-005 | Sachbearbeiter | Pro Klasse kann eine Tagesgebür gesetzt werden.                                                             |
+| UC-006 | Kunde          | Kunde kann eine Reservation tätigen mit einem Auto aus einer bestimmten Klasse und die Anzahl Tage angeben. |
+| UC-007 | Kunde          | Kunde holt sein reserviertes Auto ab. Die Reservation wird zu einen Mietvertrag umgewandelt.                |
 
-## 3. Domain Model
+## 3.Arbeitspaket 3 – 4+1 Views
 
-## 4. Deployment View
+### 3.1 Deployment View
 
-## 5. Logical View
+### 3.2 Logical View
 
-## 6. Implementation 
+## 4. Arbeitspaket 4 – Implementierung
 
-## 6.1. - Continuous Integration 
+## 5. Arbeitspaket 5 – Continuous Integration und Metriken
 
-## 6.2. - Metriken
+### 5.1 Continuous Integration
 
-## 6.3. - Dokumentation arc42
+### 5.2. Metriken
+
+## 6. Arbeitspaket 6 – Dokumentation (nach arc42)
