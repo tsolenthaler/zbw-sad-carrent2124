@@ -53,7 +53,7 @@ C4Container
 C4Component
     Container(webapp, "Web Application", "", "")
 
-    Container_Boundary(api, "API Application") {
+    Boundary(api, "") {
         Component(car, "Car Controller", "Component API", "Car Controller")
         Component(customer, "Customer Controller", "Component API", "Customer Controller")
         Component(reservation, "Reservation Controller", "Component API", "Reservation Controller")
@@ -69,10 +69,10 @@ C4Component
     Rel(webapp, reservation, "Reservation", "JSON/HTTPS")
     Rel(webapp, contract, "Contract", "JSON/HTTPS")
 
-    Rel(car, db, "Car", "CRUD", "EntityFrameworkCore")
-    Rel(customer, db, "Customer", "CRUD", "EntityFrameworkCore")
-    Rel(reservation, db, "Reservation", "CRUD", "EntityFrameworkCore")
-    Rel(contract, db, "Contract", "CRUD", "EntityFrameworkCore")
+    Rel(car, db, "Car", "CRUD")
+    Rel(customer, db, "Customer", "CRUD")
+    Rel(reservation, db, "Reservation", "CRUD")
+    Rel(contract, db, "Contract", "CRUD")
 
     UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
