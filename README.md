@@ -61,7 +61,7 @@ C4Component
     }
 
     Boundary(b2, "", "") {
-        ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+        ContainerDb(db, "Database", "Contianer: Postgres", "Stores Car, Customer, Reservation and Contract")
     }
 
     Rel(webapp, car, "Car", "JSON/HTTPS")
@@ -69,6 +69,12 @@ C4Component
     Rel(webapp, reservation, "Reservation", "JSON/HTTPS")
     Rel(webapp, contract, "Contract", "JSON/HTTPS")
 
+    Rel(car, db, "Car", "CRUD", "EntityFrameworkCore")
+    Rel(customer, db, "Customer", "CRUD", "EntityFrameworkCore")
+    Rel(reservation, db, "Reservation", "CRUD", "EntityFrameworkCore")
+    Rel(contract, db, "Contract", "CRUD", "EntityFrameworkCore")
+
+    UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
 
 
