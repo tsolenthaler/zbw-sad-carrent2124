@@ -137,15 +137,14 @@ Economy --|> Category
 ```
 
 ### 2.2 Use Cases
-| Nr     | User           | Ziel                                                                                                        |
-| ------ | -------------- | ----------------------------------------------------------------------------------------------------------- |
-| UC-001 | Sachbearbeiter | Nach Kunden mit Namen und Adresse und Kundennummer im System verwalten (erfassen, bearbeiten, löschen).     |
-| UC-002 | Sachbearbeiter | Nach Kunden mit dessen Namen oder Kundennummer suchen.                                                      |
-| UC-003 | Sachbearbeiter | Kann Autos verwalten und suchen.                                                                            |
-| UC-004 | Sachbearbeiter | Auto einer bestimmten Klasse zuordnen.                                                                      |
-| UC-005 | Sachbearbeiter | Pro Klasse kann eine Tagesgebür gesetzt werden.                                                             |
-| UC-006 | Kunde          | Kunde kann eine Reservation tätigen mit einem Auto aus einer bestimmten Klasse und die Anzahl Tage angeben. |
-| UC-007 | Kunde          | Kunde holt sein reserviertes Auto ab. Die Reservation wird zu einen Mietvertrag umgewandelt.                |
+| Nr     | Case                 | Actor          | Beschreibung                                                                                               |
+| ------ | ----------------     | -------------- | ----------------------------------------------------------------------------------------------------------- |
+| UC-001 | Kunden verwalten     | Sachbearbeiter | Nach Kunden mit Namen und Adresse und Kundennummer im System verwalten (erfassen, bearbeiten, löschen).     |
+| UC-002 | Kunden suchen        | Sachbearbeiter | Nach Kunden mit dessen Namen oder Kundennummer suchen.                                                      |
+| UC-003 | Autos verwalten      | Sachbearbeiter | Kann Autos verwalten und suchen.                                                                            |
+| UC-004 | Autoklasse verwalten | Sachbearbeiter | Ein Auto einer bestimmten Klasse zuordnen und die Tagesgebür pro Klasse setzen.                          |
+| UC-005 | Reservation tätigen  | Kunde          | Der Kunde kann eine Reservation tätigen mit einem Auto aus einer bestimmten Klasse und die Anzahl Tage angeben. |
+| UC-006 | Reservation zu Mietvertrag umwandeln | Kunde    | Kunde holt sein reserviertes Auto ab. Die Reservation wird zu einen Mietvertrag umgewandelt.          |
 
 ## 3.Arbeitspaket – 4+1 Views
 
