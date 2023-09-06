@@ -17,12 +17,5 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Api\" />
-    <Folder Include="Common\Domain\" />
-    <Folder Include="Common\Infrastructure\" />
-	  <Folder Include="CarManagement\Api\" />
-	  
-  </ItemGroup>
 
 </Project>
