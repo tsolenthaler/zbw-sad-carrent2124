@@ -1,5 +1,7 @@
 # CarRent
 
+Mini-Projekt SAD
+
 ## 1.  Arbeitspaket - C4 Model
 
 ### 1.1. - Context
@@ -32,7 +34,7 @@ C4Container
     Boundary(CarRent, "", "") {
         Container(webapp, "Web Application", "", "")
         Container(api, "API", "", "Provides CarRent functionality via API")
-        ContainerDb(database, "Database", "Postgres", "Stores user, cars, Car classes, Reservations and Rental contracts")
+        ContainerDb(database, "Database", "SQL", "Stores user, cars, Car classes, Reservations and Rental contracts")
     }
 
     Boundary(b2, "", "") {
@@ -63,7 +65,7 @@ C4Component
     }
 
     Boundary(b2, "", "") {
-        ContainerDb(db, "Database", "Contianer: Postgres", "Stores Car, Customer, Reservation and Contract")
+        ContainerDb(db, "Database", "Contianer: SQL Server Express", "Stores Car, Customer, Reservation and Contract")
     }
 
     Rel(webapp, car, "Car", "JSON/HTTPS")
@@ -132,8 +134,6 @@ Car "*" --> "1" Category : assigned
 Luxury --|> Category
 Midrange --|> Category
 Economy --|> Category
-
-
 ```
 
 ### 2.2 Use Cases
@@ -150,6 +150,7 @@ Economy --|> Category
 ## 3.Arbeitspaket – 4+1 Views
 
 ### 3.1 Deployment View
+
 
 ### 3.2 Logical View
 
