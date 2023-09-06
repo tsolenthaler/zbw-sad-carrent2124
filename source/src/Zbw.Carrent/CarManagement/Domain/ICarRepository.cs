@@ -2,7 +2,7 @@
 {
     public interface ICarRepository
     {
-        IQueryable<Car> GetAll();
+        IEnumerable<Car> GetAll();
         Car Get(Guid id);
         void Add(Car car);
         void Remove(Car car);
