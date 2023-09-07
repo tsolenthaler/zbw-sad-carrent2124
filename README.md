@@ -14,13 +14,8 @@ C4Context
         System(CarRent, "CarRent", "Software System")
     }
 
-    Boundary(b2, "", "") {
-        System_Ext(MailSystem, "E-Mail System", "Mail Service")
-    }
-
     Rel(Sachbearbeiter, CarRent, "Manage all")
     Rel(Kunde, CarRent, "Read and Search")
-    Rel(CarRent, MailSystem, "send E-Mail")
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
@@ -37,15 +32,10 @@ C4Container
         ContainerDb(database, "Database", "SQL", "Stores user, cars, Car classes, Reservations and Rental contracts")
     }
 
-    Boundary(b2, "", "") {
-        System_Ext(MailSystem, "E-Mail System", "Mail Service")
-    }
-
     Rel(Sachbearbeiter, webapp, "HTTPS")
     Rel(Kunde, webapp, "HTTPS")
     Rel(webapp, api, "Requests")
     Rel(api, database, "CRUD")
-    Rel(api, MailSystem, "send E-Mail")
 
     UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 ```
