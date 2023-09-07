@@ -2,22 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using Zbw.Carrent.Context;
     using Zbw.Carrent.CustomerManagement.Domain;
 
     public class CustomerRepository : ICustomerRepository
     {
         private readonly List<Customer> _customers;
-        private readonly CustomerContext _context;
+        private readonly CarrentContext _context;
 
-        public CustomerRepository(CustomerContext context)
+        public CustomerRepository(CarrentContext context)
         {
-            _customers = new List<Customer>()
-            {
-                new("C00001", "Hans"),
-                new("C00002", "Fritz")
-            };
-
             _context = context;
         }
 

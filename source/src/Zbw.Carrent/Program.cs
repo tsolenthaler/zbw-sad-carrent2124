@@ -1,14 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 
+using Zbw.Carrent.Context;
+using Zbw.Carrent.CarManagement.Domain;
 using Zbw.Carrent.CustomerManagement.Domain;
+using Zbw.Carrent.ReservationManagement.Domain;
+using Zbw.Carrent.CarManagement.Infrastructure.Persistence;
 using Zbw.Carrent.CustomerManagement.Infrastructure.Persistence;
+using Zbw.Carrent.ReservationManagement.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<CarrentContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZbwCarrentContext")));
+builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddDbContext<CustomerContext>();
-
+builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IRentalContractRepository, RentalContractRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -5,8 +5,8 @@
         IEnumerable<Car> GetAll();
         Car Get(Guid id);
         void Add(Car car);
+        Car Update(Car car);
         void Remove(Car car);
         void Remove(Guid id);
-
     }
 }

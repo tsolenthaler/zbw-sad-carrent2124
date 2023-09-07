@@ -9,6 +9,7 @@
     using FluentAssertions;
 
     using Zbw.Carrent.CustomerManagement.Api;
+    using Zbw.Carrent.CustomerManagement.Domain;
 
     public class CustomerControllerTests
     {
@@ -19,5 +20,18 @@
 
             act.Should().Throw<ArgumentNullException>();
         }
+
+        [Fact]
+        public void Post_Should_CreateCustomer()
+        {
+            // Arrange
+        
+            // Act  
+
+            // Assert
+           
+        }
     }
+
+
 }

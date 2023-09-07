@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Zbw.Carrent.CarManagement.Api.Models;
+using Zbw.Carrent.CarManagement.Domain;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,18 +10,29 @@ namespace Zbw.Carrent.CarManagement.Api
     [ApiController]
     public class CarController : ControllerBase
     {
+        private ICarRepository _repository;
+
+        public CarController(ICarRepository repository)
+        {
+            ArgumentNullException.ThrowIfNull(repository);
+            _repository = repository;
+        }
         // GET: api/<CarController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<CarResponse> Get()
         {
-            return new string[] { "value1", "value2" };
+            var cars = _repository.GetAll();
+            return cars.Select(c => new CarResponse(c.Id, c.CarNr, c.CarBrand, c.CarCategory, c.CarModel));
         }
 
         // GET api/<CarController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public CarResponse Get(Guid id)
         {
-            return "value";
+            var car = _repository.Get(id);
+            if (car != null)
+                return new CarResponse(car.Id, car.CarNr, car.CarBrand, car.CarCategory, car.CarModel);
+            return null;
         }
 
         // POST api/<CarController>
