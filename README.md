@@ -50,8 +50,6 @@ C4Component
         Component(customer, "Customer Controller", "Component API", "Customer Controller")
         Component(reservation, "Reservation Controller", "Component API", "Reservation Controller")
         Component(contract, "Contract Controller", "Component API", "Contract Controller")
-
-        Component(car, "Car Repository", "Component API", "Car Controller")
     }
 
     Boundary(b2, "", "") {
