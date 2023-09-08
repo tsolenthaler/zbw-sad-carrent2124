@@ -156,7 +156,7 @@ flowchart LR
         end
     end
 
-    Browser -->|HTTP| IISExpress :
+    Browser --> IISExpress :
     IISExpress --> API : 
     API --> MSSQL
 ```
