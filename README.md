@@ -137,7 +137,18 @@ Economy --|> Category
 ## 3.Arbeitspaket – 4+1 Views
 
 ### 3.1 Deployment View
+```mermaid
+flowchart LR
+    subgraph Client
 
+    end
+    subgraph Server
+        subgraph IISExpress
+        end
+    end
+    
+    Client --> IISExpress
+```
 
 ### 3.2 Logical View
 
