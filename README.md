@@ -140,18 +140,18 @@ Economy --|> Category
 ```mermaid
 flowchart LR
     subgraph Client Tier
-        subgraph Browser
-        end
+    end
+    subgraph Browser
+    end
+    subgraph IISExpress
+    end
+    subgraph API
     end
     subgraph Application Tier
-        subgraph IISExpress
-        end
-        subgraph API
-        end
     end
     subgraph Data Tier
-        subgraph MSSQL
-        end
+    end
+    subgraph MSSQL
     end
 
     Browser -->|HTTP| IISExpress :
