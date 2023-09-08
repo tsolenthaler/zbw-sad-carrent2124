@@ -147,9 +147,8 @@ flowchart LR
     end
     subgraph MSSQL
     end
-
-    Browser -->|HTTP| IISExpress :
-    IISExpress --> API : 
+    Browser --> IISExpress
+    IISExpress --> API
     API --> MSSQL
 ```
 
