@@ -145,9 +145,15 @@ flowchart LR
     subgraph Server
         subgraph IISExpress
         end
+        subgraph API
+        end
+        subgraph MSSQL
+        end
     end
-    
+
     Client --> IISExpress
+    IISExpress --> API
+    API --> MSSQL
 ```
 
 ### 3.2 Logical View
