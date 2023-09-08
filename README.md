@@ -139,20 +139,25 @@ Economy --|> Category
 ### 3.1 Deployment View
 ```mermaid
 flowchart LR
-    subgraph Client
-
+    User
+    subgraph Client Tier
+        subgraph Browser
+        end
     end
-    subgraph Server
+    subgraph Application Tier
         subgraph IISExpress
         end
         subgraph API
         end
+    end
+    subgraph Data Tier
         subgraph MSSQL
+            
         end
     end
 
-    Client --> IISExpress
-    IISExpress --> API
+    Browser -->|HTTP| IISExpress
+    IISExpress --> API : 
     API --> MSSQL
 ```
 
