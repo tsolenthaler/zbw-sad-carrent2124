@@ -43,9 +43,9 @@ namespace Zbw.Carrent.CarManagement.Api
             {
                 Id = Guid.NewGuid(),
                 CarNr = value.CarNr,
-                CarBrand = value.CarBrand,
-                CarCategory = value.CarCategory,
-                CarModel = value.CarModel
+                CarBrand = value.carBrand,
+                CarCategory = value.carCategory,
+                CarModel = value.carModel
             };
             _repository.Add(newCar);
             return new CarResponse(newCar.Id, newCar.CarNr, newCar.CarBrand, newCar.CarCategory, newCar.CarModel);
@@ -59,9 +59,9 @@ namespace Zbw.Carrent.CarManagement.Api
             if (car != null)
             {
                 car.CarNr = value.CarNr;
-                car.CarBrand = value.CarBrand;
-                car.CarCategory = value.CarCategory;
-                car.CarModel = value.CarModel;
+                car.CarBrand = value.carBrand;
+                car.CarCategory = value.carCategory;
+                car.CarModel = value.carModel;
                 _repository.Update(car);
                 return new CarResponse(car.Id, car.CarNr, car.CarBrand, car.CarCategory, car.CarModel);
             }
