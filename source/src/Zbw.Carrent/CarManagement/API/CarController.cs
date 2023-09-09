@@ -37,20 +37,45 @@ namespace Zbw.Carrent.CarManagement.Api
 
         // POST api/<CarController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public CarResponse Post([FromBody] CarRequest value)
         {
+            var newCar = new Car
+            {
+                Id = Guid.NewGuid(),
+                CarNr = value.CarNr,
+                CarBrand = value.CarBrand,
+                CarCategory = value.CarCategory,
+                CarModel = value.CarModel
+            };
+            _repository.Add(newCar);
+            return new CarResponse(newCar.Id, newCar.CarNr, newCar.CarBrand, newCar.CarCategory, newCar.CarModel);
         }
 
         // PUT api/<CarController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public CarResponse Put(Guid id, [FromBody] CarRequest value)
         {
+            var car = _repository.Get(id);
+            if (car != null)
+            {
+                car.CarNr = value.CarNr;
+                car.CarBrand = value.CarBrand;
+                car.CarCategory = value.CarCategory;
+                car.CarModel = value.CarModel;
+                _repository.Update(car);
+                return new CarResponse(car.Id, car.CarNr, car.CarBrand, car.CarCategory, car.CarModel);
+            }
+            return null;
         }
 
         // DELETE api/<CarController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
+            var car = _repository.Get(id);
+            if (car != null)
+                _repository.Remove(car);
+
         }
     }
 }
