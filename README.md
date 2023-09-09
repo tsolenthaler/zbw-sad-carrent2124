@@ -177,3 +177,16 @@ Metriken -
 ## 6. Arbeitspaket – Dokumentation (nach arc42)
 
 Dokumentation gemäss folgenden Template [arc42](https://www.arc42.de/overview/)
+
+01. [Introduction and Goals](./docs/01_introduction_and_goals.md)
+02. [Architecture Constraints](./docs/02_architecture_constraints.md)
+03. [System Scope and Context](./docs/03_system_scope_and_context.md)
+04. [Solution Strategy](./docs/04_solution_strategy.md)
+05. [Building block](./docs/05_building_block_view.md)
+06. [Runtime View](./docs/06_runtime_view.md)
+07. [Deployment View](./docs/07_deployment_view.md)
+08. [Conepts](./docs/08_concepts.md)
+09. [Architecture decisions](./docs/09_architecture_decisions.md)
+10. [Quality Requirements](./docs/10_quality_requirements.md)
+11. [Technical risks](./docs/11_technical_risks.md)
+12. [Glossary](./docs/12_glossary.md)
