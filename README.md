@@ -156,7 +156,7 @@ flowchart LR
 
     Browser -->|HTTP| IISExpress
     IISExpress --> API
-    API -->|SQL|  MSSQL
+    API -->|SQL| MSSQL
 ```
 
 ### 3.2 Logical View
