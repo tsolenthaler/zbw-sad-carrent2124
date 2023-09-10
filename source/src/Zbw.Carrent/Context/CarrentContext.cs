@@ -31,7 +31,7 @@
             carCategory.HasKey(x => x.Id);
             carCategory.Property(x => x.DailyFee).HasPrecision(10, 2);
             modelBuilder.Entity<CarModel>().HasKey(x => x.Id);
-            modelBuilder.Entity<Reservation>();
+            modelBuilder.Entity<Reservation>().Property(x => x.TotalCost).HasPrecision(8, 2);
             modelBuilder.Entity<Customer>();
             modelBuilder.Entity<RentalContract>();
             base.OnModelCreating(modelBuilder);
