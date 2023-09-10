@@ -56,7 +56,6 @@ C4Component
         Component(ContractRepository, "ContractRepository", "Component Repository", "Contract Repository")
     }
 
-
     Boundary(b2, "", "") {
         ContainerDb(db, "Database", "Contianer: SQL Server Express", "Stores Car, Customer, Reservation and Contract")
     }
