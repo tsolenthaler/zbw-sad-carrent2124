@@ -30,6 +30,11 @@
         [HttpGet("{id}")]
         public CustomerResponse Get(Guid id)
         {
+            var customer = _repository.Get(id);
+            if (customer != null)
+            {
+                return new CustomerResponse(customer.Id, customer.CustomerNr, customer.Name, null);
+            }
             return null;
         }
 
@@ -37,13 +42,28 @@
         [HttpPost]
         public CustomerResponse Post([FromBody] CustomerRequest value)
         {
-            return null;
+            var newCustomer = new Customer
+            {
+                Id = Guid.NewGuid(),
+                CustomerNr = value.CustomerNr,
+                Name = value.Name
+            };
+            _repository.Add(newCustomer);
+            return new CustomerResponse(newCustomer.Id, newCustomer.CustomerNr, newCustomer.Name, null);
         }
 
         // PUT api/<CustomerController>/5
         [HttpPut("{id}")]
         public CustomerResponse Put(Guid id, [FromBody] CustomerRequest value)
         {
+            var customer = _repository.Get(id);
+            if (customer != null)
+            {
+                customer.CustomerNr = value.CustomerNr;
+                customer.Name = value.Name;
+                _repository.Update(customer);
+                return new CustomerResponse(customer.Id, customer.CustomerNr, customer.Name, null);
+            }
             return null;
         }
 

@@ -1,5 +1,6 @@
 ﻿namespace Zbw.Carrent.CustomerManagement.Infrastructure.Persistence
 {
+    using Microsoft.EntityFrameworkCore;
     using System;
     using System.Collections.Generic;
     using Zbw.Carrent.Context;
@@ -7,39 +8,51 @@
 
     public class CustomerRepository : ICustomerRepository
     {
-        private readonly List<Customer> _customers;
         private readonly CarrentContext _context;
 
         public CustomerRepository(CarrentContext context)
         {
             _context = context;
         }
-
-        public void Add(Customer customer)
+        public IEnumerable<Customer> GetAll()
         {
-            _context.Add(customer);
-
-            throw new NotImplementedException();
+            return _context.Customers
+                .Include(c => c.CustomerNr)
+                .Include(c => c.Name)
+                .ToList();
         }
 
         public Customer Get(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Customers
+                .Include(c => c.CustomerNr)
+                .Include(c => c.Name)
+                .First(c => c.Id == id);
         }
 
-        public IEnumerable<Customer> GetAll()
+        public void Add(Customer customer)
         {
-            return _customers;
+            _context.Add(customer);
+            _context.SaveChanges();
+        }
+
+        public Customer Update(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            _context.SaveChanges();
+            return customer;
         }
 
         public void Remove(Customer customer)
         {
-            throw new NotImplementedException();
+            _context.Customers.Remove(customer);
+            _context.SaveChanges();
         }
 
         public void Remove(Guid id)
         {
-            throw new NotImplementedException();
+            _context.Customers.Remove(Get(id));
+            _context.SaveChanges();
         }
     }
 }
