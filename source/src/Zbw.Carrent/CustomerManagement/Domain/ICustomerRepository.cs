@@ -7,6 +7,7 @@
         Customer Get(Guid id);
 
         void Add(Customer customer);
+        void Update(Customer customer);
 
         void Remove(Customer customer);
 
