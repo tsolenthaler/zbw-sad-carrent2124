@@ -177,11 +177,11 @@ flowchart LR
 
 ### 5.1 Continuous Integration
 
-CI/CD - [GitHub Action](https://github.com/tsolenthaler/zbw-sad-carrent2124/actions)
+CI/CD: [GitHub Action](https://github.com/tsolenthaler/zbw-sad-carrent2124/actions)
 
 ### 5.2. Metriken
 
-Metriken - 
+Metriken: [Sonarcloud](https://sonarcloud.io/summary/new_code?id=tsolenthaler_zbw-sad-carrent2124)
 
 ## 6. Arbeitspaket – Dokumentation (nach arc42)
 
