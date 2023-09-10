@@ -46,25 +46,38 @@ C4Component
     Container(webapp, "Web Application", "", "")
 
     Boundary(api, "", "") {
-        Component(car, "Car Controller", "Component API", "Car Controller")
-        Component(customer, "Customer Controller", "Component API", "Customer Controller")
-        Component(reservation, "Reservation Controller", "Component API", "Reservation Controller")
-        Component(contract, "Contract Controller", "Component API", "Contract Controller")
+        Component(CarController, "CarController", "Component API", "Car Controller")
+        Component(CustomerController, "CustomerController", "Component API", "Customer Controller")
+        Component(ReservationController, "ReservationController", "Component API", "Reservation Controller")
+        Component(ContractController, "ContractController", "Component API", "Contract Controller")
     }
+
+    Boundary(repository, "", "") {
+        Component(CarRepository, "CarRepository", "Component Repository", "Car Repository")
+        Component(CustomerRepository, "CustomerRepository", "Component Repository", "Customer Repository")
+        Component(ReservationRepository, "ReservationRepository", "Component Repository", "Reservation Repository")
+        Component(ContractRepository, "ContractRepository", "Component Repository", "Contract Repository")
+    }
+
 
     Boundary(b2, "", "") {
         ContainerDb(db, "Database", "Contianer: SQL Server Express", "Stores Car, Customer, Reservation and Contract")
     }
 
-    Rel(webapp, car, "Car", "JSON/HTTPS")
-    Rel(webapp, customer, "Customer", "JSON/HTTPS")
-    Rel(webapp, reservation, "Reservation", "JSON/HTTPS")
-    Rel(webapp, contract, "Contract", "JSON/HTTPS")
+    Rel(webapp, CarController, "Car", "JSON/HTTPS")
+    Rel(webapp, CustomerController, "Customer", "JSON/HTTPS")
+    Rel(webapp, ReservationController, "Reservation", "JSON/HTTPS")
+    Rel(webapp, ContractController, "Contract", "JSON/HTTPS")
 
-    Rel(car, db, "Car", "CRUD")
-    Rel(customer, db, "Customer", "CRUD")
-    Rel(reservation, db, "Reservation", "CRUD")
-    Rel(contract, db, "Contract", "CRUD")
+    Rel(CarController, CarRepository, "", "")
+    Rel(CustomerController, CustomerRepository, "", "")
+    Rel(ReservationController, ReservationRepository, "", "")
+    Rel(ContractController, ContractRepository, "", "")
+
+    Rel(CarRepository, db, "Car", "CRUD")
+    Rel(CustomerRepository, db, "Customer", "CRUD")
+    Rel(ReservationRepository, db, "Reservation", "CRUD")
+    Rel(ContractRepository, db, "Contract", "CRUD")
 
     UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
