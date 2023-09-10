@@ -50,9 +50,6 @@ C4Component
         Component(CustomerController, "CustomerController", "Component API", "Customer Controller")
         Component(ReservationController, "ReservationController", "Component API", "Reservation Controller")
         Component(ContractController, "ContractController", "Component API", "Contract Controller")
-    }
-
-    Boundary(repository, "", "") {
         Component(CarRepository, "CarRepository", "Component Repository", "Car Repository")
         Component(CustomerRepository, "CustomerRepository", "Component Repository", "Customer Repository")
         Component(ReservationRepository, "ReservationRepository", "Component Repository", "Reservation Repository")
