@@ -6,7 +6,7 @@ using Zbw.Carrent.CustomerManagement.Domain;
 using Zbw.Carrent.ReservationManagement.Domain;
 using Zbw.Carrent.CarManagement.Infrastructure.Persistence;
 using Zbw.Carrent.CustomerManagement.Infrastructure.Persistence;
-using Zbw.Carrent.ReservationManagement.Infrastructure;
+using Zbw.Carrent.ReservationManagement.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

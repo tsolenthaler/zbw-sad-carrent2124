@@ -1,6 +1,6 @@
 ﻿using Zbw.Carrent.ReservationManagement.Domain;
 
-namespace Zbw.Carrent.ReservationManagement.Infrastructure
+namespace Zbw.Carrent.ReservationManagement.Infrastructure.Persistence
 {
     public class ReservationRepository : IReservationRepository
     {
@@ -16,7 +16,7 @@ namespace Zbw.Carrent.ReservationManagement.Infrastructure
 
         public IEnumerable<Reservation> GetAll()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Remove(Reservation reservation)
